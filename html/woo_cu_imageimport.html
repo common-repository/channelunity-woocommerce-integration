@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<div class="cu_container" id="cu_container">
+
+    <img src="<?php echo $culogo; ?>"><br>
+    <h1>
+        Import images from URLS
+    </h1>
+    <h4>This feature downloads images from URLS found in your product metadata</h4>
+    <div class="cu_holder cu_cssimageimport" id="cu_cssimageimport">
+        <div id="cu_imageimport_setup">
+            Enter the names of the metafields you wish to search, separated by commas<br>
+            The first field that contains a url for each product will be set as the main product image, any others will be set as product gallery images<br>
+            Click 'Count' to check how many products have images to import. Click 'Reset' to restore columns that have been previously imported<br><br>
+            <h3>Please note that this process will overwrite existing images where data is found!</h3>
+            Click 'Process' to start the import process.<br><br>
+            Fields:<input id='cu_imageimport_metafields'><br><br>
+            <span id='cu_imageimport_count'></span></br><br>
+            <button onclick='cujs_imageimport_count()'>Check</button>
+            <button onclick='cujs_imageimport_reset()'>Reset</button>
+            <button onclick='cujs_imageimport_start()'>Process</button>
+        </div>
+    
+        <div id="cu_imageimport_status" style='display: none'>
+            <h4>Currently downloading and importing images</h4><br>
+            <h3>Progress: <span id='cu_imageimport_progress'></span></h3>
+        </div>
+
+        <div id="cu_imageimport_complete" style='display: none'>
+            <h2>The import process has completed!</h2>
+            <div id='cu_imageimport_failed'></div>
+        </div>
+    </div>
+    
+    
+</div>
